@@ -6,7 +6,7 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>Test GeoIP</h1>
+    <h1>Test GeoIP 2</h1>
 <?php
 require_once 'vendor/autoload.php';
 use GeoIp2\Database\Reader;
