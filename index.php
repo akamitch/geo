@@ -9,4 +9,5 @@ $reader = new Reader('GeoLite2-City.mmdb');
 $record = $reader->city('128.101.101.101');
 
 print($record->country->isoCode);
+print($record->city);
 ?>
