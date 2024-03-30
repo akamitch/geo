@@ -14,8 +14,10 @@ use GeoIp2\Database\Reader;
 // This reader object should be reused across lookups as creation of it is
 // expensive.
 $reader = new Reader('GeoLite2-City.mmdb');
+//$clientIP = '128.101.101.101';
+$clientIP = $_SERVER['HTTP_CF_CONNECTING_IP'];
 
-$record = $reader->city('128.101.101.101');
+$record = $reader->city($clientIP);
 
 print($record->country->isoCode . "<br>\n"); // 'US'
 print($record->mostSpecificSubdivision->name . "<br>\n"); // 'Minnesota'
