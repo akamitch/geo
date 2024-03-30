@@ -17,14 +17,9 @@ $reader = new Reader('GeoLite2-City.mmdb');
 
 $record = $reader->city('128.101.101.101');
 
-print($record->country->isoCode);
-
-
-$properties = get_object_vars($record);
-
-foreach ($properties as $property => $value) {
-    echo $property . ': ' . $value . PHP_EOL;
-}
+print($record->country->isoCode . "<br>\n"); // 'US'
+print($record->mostSpecificSubdivision->name . "<br>\n"); // 'Minnesota'
+print($record->mostSpecificSubdivision->isoCode . "<br>\n"); // 'MN'
 ?>    
 </body>
 </html>
