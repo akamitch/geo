@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>GeoIP Mitch test</title>
 </head>
 <body>
     <h1>Test GeoIP 2</h1>
@@ -19,9 +19,9 @@ $clientIP = $_SERVER['HTTP_CF_CONNECTING_IP'];
 
 $record = $reader->city($clientIP);
 
-print($record->country->isoCode . "<br>\n"); // 'US'
-print($record->mostSpecificSubdivision->name . "<br>\n"); // 'Minnesota'
-print($record->mostSpecificSubdivision->isoCode . "<br>\n"); // 'MN'
+print("Country: " . $record->country->isoCode . "<br>\n"); // 'US'
+print("Subdivision isoCode: " . $record->mostSpecificSubdivision->isoCode . "<br>\n"); // 'MN'
+print("Subdivision name: " . $record->mostSpecificSubdivision->name . "<br>\n"); // 'Minnesota'
 ?>    
 </body>
 </html>
